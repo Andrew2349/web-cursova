@@ -133,7 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'  # або будь-який інший URL для доступу до медіа файлів
 
-# Встановлюємо MEDIA_ROOT для збереження файлів в окрему папку `posts`
 MEDIA_ROOT = os.path.join(BASE_DIR, 'posts')
 LOGOUT_REDIRECT_URL = 'login'
 
