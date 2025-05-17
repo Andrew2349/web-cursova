@@ -77,7 +77,7 @@ def home(request):
             comment.post = post
             comment.user = request.user
             comment.save()
-            return redirect('home')  # або use reverse()
+            return redirect('home')
 
     comment_forms = {post.id: CommentForm() for post in posts}
     return render(request, 'network/home.html', {'posts': posts, 'comment_forms': comment_forms})
@@ -137,7 +137,7 @@ def edit_profile(request):
             user.last_name = form.cleaned_data['last_name']
             user.save()
 
-            return redirect('profile', username=user.username)  # <-- Виправлено
+            return redirect('profile', username=user.username)
     else:
         form = ProfileEditForm(instance=profile)
 
@@ -263,7 +263,7 @@ def reject_friend(request, user_id):
 @login_required
 def create_route(request):
     if request.method == 'POST':
-        form = RouteForm(request.POST, request.FILES)  # додаємо request.FILES!
+        form = RouteForm(request.POST, request.FILES)
         if form.is_valid():
             route = form.save(commit=False)
             route.user = request.user
@@ -275,5 +275,5 @@ def create_route(request):
 
 @login_required
 def routes(request):
-    all_routes = Route.objects.select_related('user').order_by('-id')  # отримуємо всі маршрути
+    all_routes = Route.objects.select_related('user').order_by('-id')
     return render(request, 'network/routes.html', {'routes': all_routes})

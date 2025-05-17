@@ -44,7 +44,7 @@ class ProfileEditForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['avatar']  # Тільки профільні поля, аватар
+        fields = ['avatar']
 
 class RouteForm(forms.ModelForm):
     class Meta:
