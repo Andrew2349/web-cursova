@@ -41,9 +41,13 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'widget_tweaks',
+    'captcha',
 ]
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+RECAPTCHA_PUBLIC_KEY = '6Lci60MrAAAAAIA9PjglpGIgoYVywWjKm-un7fwy'
+RECAPTCHA_PRIVATE_KEY = '6Lci60MrAAAAAIdlNabjMOxvKBsrfEFUXVPnEM24'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,6 +60,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'web_cursova.urls'
+
+AUTH_USER_MODEL = 'network.CustomUser'
 
 TEMPLATES = [
     {

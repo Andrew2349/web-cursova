@@ -44,7 +44,12 @@ path('friends/reject/<int:user_id>/', views.reject_friend, name='reject_friend')
     path('routes/<int:route_id>/', views.route_detail, name='route_detail'),
     path('add_route_comment/', views.add_route_comment, name='add_route_comment'),
     path('notifications/', views.notifications, name='notifications'),
-
+    path('admin/delete_user/<int:user_id>/', views.delete_user, name='delete_user'),
+    path('admin/delete_post/<int:post_id>/', views.delete_post, name='delete_post'),
+    path('users/', views.users_list, name='users_list'),
+    path('users/delete/<int:user_id>/', views.delete_user, name='delete_user'),
+path('post/delete/<int:post_id>/', views.delete_post, name='delete_post'),
+path('settings/', views.settings_view, name='settings'),
 ]
 
 if settings.DEBUG:
